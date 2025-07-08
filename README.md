@@ -1,6 +1,7 @@
 # Resumen Automático de Fallos Judiciales con LLMs
 
 ## Introducción
+
 En el Boletín Judicial de los Tribunales Provinciales de Córdoba, un equipo liderado por la Dra. Valeria Sola trabaja en la extracción de metadatos, redacción de síntesis y elaboración de sumarios de fallos judiciales. Estas tareas se realizan manualmente sobre textos denominados [Fallos](https://drive.google.com/file/d/1M7qSGdbUqznr94c2qDan3uIS5SkR5TiE/view?usp=sharing), generando como resultado documentos denominados [Sumarios](https://drive.google.com/file/d/1yk6CjVThjc6iFP7Dw3XlPv6srfCkQhDi/view?usp=sharing). El objetivo es ofrecer documentos estandarizados que resumen causas legales en los fueros Civil y Penal, siguiendo las [Normas de estilo para la redacción de sumarios de jurisprudencia](https://drive.google.com/file/d/18NEBdtVR5UuGBziGEfFb1CA8ePUUsOnd/view?usp=sharing).
 
 Este proceso manual es altamente demandante y consume tiempo que los abogados podrían dedicar a tareas más interpretativas. Este proyecto propone una herramienta automática que genere textos preliminares, permitiendo a los abogados centrarse en la validación, profundización y edición de los documentos generados, optimizando su esfuerzo y asegurando el cumplimiento de los estándares establecidos.
@@ -13,6 +14,7 @@ La **hipótesis** sobre la que se trabajó desde el principio fue que se podria 
 ## Planificación y Ejecución
 
 El desarrollo de este proyecto implicó un proceso iterativo de aprendizaje y experimentación con diversos entornos y modelos hasta alcanzar la solución final. A continuación, se detalla esta trayectoria.
+El núcleo de este proyecto no solo radica en los resultados obtenidos, sino en el **proceso intensivo de exploración técnica y metodológica** llevado adelante.
 
 ### Familiarización con los Modelos
 En una primera instancia, se utilizó la plataforma **Google Colab** para comprender el manejo de modelos de lenguaje. Durante esta etapa inicial, el enfoque estuvo en:
@@ -24,6 +26,41 @@ Aprovechando los 15 GB de GPU de la versión gratuita de Colab, fue posible real
 En la segunda fase, se accedió a servidores avanzados en San Francisco, Córdoba, equipados con dos **NVIDIA A30** de 25 GB de GPU cada una. Este entorno permitió:
 - Cargar un modelo **LLaMA de 8B parámetros**.
 - Obtener resultados prometedores y eficientes en la extracción de metadatos y la generación de síntesis.
+
+### Técnicas de Resumen Exploradas
+
+Durante el proceso se investigaron y probaron diferentes enfoques para resumir documentos extensos usando LLMs:
+
+- **Staffing Method:** ingreso directo del texto completo como prompt (limitado por el tamaño del input).
+- **MapReduce Method:** división del texto en fragmentos, resumen por partes y fusión de los resúmenes.
+- **Refine Method:** resumen incremental combinando subtextos en serie.
+
+> Si bien el sistema final no utilizó MapReduce ni Refine, su experimentación fue crucial para comprender las limitaciones contextuales y computacionales de cada enfoque.
+
+Más información sobre estas técnicas en este [artículo de Medium](https://medium.com/google-cloud/langchain-chain-types-large-document-summarization-using-langchain-and-google-cloud-vertex-ai-1650801899f6).
+
+### Indicadores de Calidad en los Resultados
+
+Durante el proceso, se definieron criterios empíricos para evaluar la **mala calidad de los resúmenes generados**:
+
+- Inclusión de **entidades no presentes** en el fallo original (ej: palabras como “Estados Unidos”).
+- Uso de **formatos ajenos** al estilo jurídico (ej: un resumen terminó con la leyenda “Madrid, 18 de septiembre de 2024”, cuando toda la información usada fue de Córdoba, Argentina).
+- **Repetición innecesaria** de oraciones, palabras o símbolos (ej: “,,,”, frases duplicadas).
+  
+
+
+### Técnicas Avanzadas de Prompting
+
+Se aplicaron estrategias para guiar al modelo a través de procesos de razonamiento similares al humano:
+
+- **Chain of Thought (CoT):** estructurar el razonamiento paso a paso para tareas complejas.
+- **Tree of Thought (ToT):** navegación de soluciones parciales en forma de árbol.
+- **Graph of Thought (GoT):** extensión flexible del ToT, explorando soluciones a través de grafos arbitrarios.
+
+Más detalles sobre estas técnicas:
+- [CoT, ToT y GoT explicadas](https://wandb.ai/sauravmaheshkar/prompting-techniques/reports/Chain-of-thought-tree-of-thought-and-graph-of-thought-Prompting-techniques-explained---Vmlldzo4MzQwNjMx)
+- [Guía sobre Chain of Thought](https://deepgram.com/learn/chain-of-thought-prompting-guide)
+
 
 ### Decisiones Estratégicas: Selección del Modelo
 Tras un análisis exhaustivo de los pros y contras de varios modelos, se decidió trabajar con modelos de la familia **LLaMA**, destacando las siguientes decisiones:
