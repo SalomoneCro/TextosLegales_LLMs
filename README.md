@@ -7,17 +7,7 @@ Este proceso manual es altamente demandante y consume tiempo que los abogados po
 
 ## Hipótesis y Objetivos Iniciales
 
-La **hipótesis** sobre la que trabajamos desde el principio fue que podríamos generar **resúmenes útiles** para los abogados, tales que les ahorren una cantidad considerable de tiempo, solo usando **prompt engineering**, sin la necesidad de **fine-tunear** algún modelo.
-
-
-
-## Resultados Finales
-
-Los resultados obtenidos con el modelo **Llama3.2-11B-Visual-Instruct** en configuración de 16 bits se resumen en las columnas **Metadatos** y **Síntesis** de la siguiente tabla:
-
-![Desempeño del Modelo Llama3.2-11B-Visual-Instruct 16 bit](llama3_2_performance.png)
-
-El modelo demostró un desempeño excelente en las tareas de extracción de metadatos y redacción de síntesis, alcanzando un 100% de buen formato y cohesión/coherencia. En la tarea de generación de sumarios, también obtuvo un desempeño destacado con un 96% de buen formato y cohesión/coherencia, aunque un 4% presentó problemas menores de formato y cohesión, sin embargo, estos resultados de generación de sumarios fue obtenida por fuera del trabajo realizado para la materia Mineria de Datos para el procesamiento de Texto. El tiempo total de procesamiento fue de 31 minutos.
+La **hipótesis** sobre la que se trabajó desde el principio fue que se podria generar **resúmenes útiles** para los abogados, tales que les ahorren una cantidad considerable de tiempo, solo usando **prompt engineering**, sin la necesidad de **fine-tunear** algún modelo.
 
 
 ## Planificación y Ejecución
@@ -26,7 +16,7 @@ El desarrollo de este proyecto implicó un proceso iterativo de aprendizaje y ex
 
 ### Familiarización con los Modelos
 En una primera instancia, se utilizó la plataforma **Google Colab** para comprender el manejo de modelos de lenguaje. Durante esta etapa inicial, el enfoque estuvo en:
-- Cargar y utilizar modelos preentrenados.
+- Cargar y utilizar modelos de pocos parametros.
 - Experimentar con bibliotecas especializadas como **Transformers**, **Accelerate** y **Torch**.
 Aprovechando los 15 GB de GPU de la versión gratuita de Colab, fue posible realizar pruebas básicas y obtener los primeros resultados.
 
@@ -70,14 +60,14 @@ Este enfoque iterativo y basado en decisiones estratégicas fue clave para logra
 
 ## Resultados
 
-Estamos a la espera del feedback de los abogados sobre los resúmenes generados, como se detalla en la sección **"Feedback e Integración de Sugerencias"**. Consideramos que esta evaluación experta es la métrica más relevante y confiable para valorar la calidad de nuestro trabajo, ya que proviene de profesionales del ámbito judicial.
+El modelo con el que se realizaron los últimos avances fue **Llama3.2-11B-Visual-Instruct** en configuración de 16 bits. Con él se logró hacer una extracción de metadatos y una generación de síntesis prometedoras; sin embargo, estamos a la espera del feedback de los abogados sobre los resúmenes generados, como se detalla en la sección **"Feedback e Integración de Sugerencias"**. Se considera que esta evaluación experta es la métrica más relevante y confiable para valorar la calidad de nuestro trabajo, ya que proviene de profesionales del ámbito judicial.
 
-Mientras tanto, los resultados actuales, presentados en la sección **"Resultados Finales"**, indican un desempeño prometedor. Estos resultados reflejan la capacidad del modelo para generar resúmenes coherentes y adaptados al contexto judicial, pero su validez definitiva dependerá del análisis y las recomendaciones de los expertos.
 
+Mientras tanto, los resultados actuales indican un desempeño prometedor que parece no tener alucinaciones. Estos resultados reflejan la capacidad del modelo para generar resúmenes coherentes y adaptados al contexto judicial, pero su validez definitiva dependerá del análisis y las recomendaciones de los expertos.
 
 ## Conclusiones y Trabajo Futuro
 
-Este proyecto demostró la viabilidad de utilizar modelos de lenguaje grande (LLMs) para automatizar parcialmente la creación de sumarios de jurisprudencia, abordando tareas como la extracción de metadatos y la redacción de síntesis. Al aplicar técnicas de **Prompt Engineering** y estrategias como **Few-Shot Prompting** y cuantización, logramos resultados prometedores sin necesidad de realizar costosos ajustes de fine-tuning.
+Este proyecto demostró la viabilidad de utilizar modelos de lenguaje grande (LLMs) para automatizar parcialmente la creación de sumarios de jurisprudencia, abordando tareas como la extracción de metadatos y la redacción de síntesis. Al aplicar técnicas de **Prompt Engineering** y estrategias como **Few-Shot Prompting** y cuantización, se lograron resultados prometedores sin necesidad de realizar costosos ajustes de fine-tuning.
 
 ### Principales Contribuciones:
 - Validación de técnicas como **Few-Shot Prompting**, obteniendo resultados consistentes en tareas complejas.
