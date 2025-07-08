@@ -51,7 +51,7 @@ Durante el proceso, se definieron criterios empíricos para evaluar la **mala ca
 
 ### Técnicas Avanzadas de Prompting
 
-Se aplicaron estrategias para guiar al modelo a través de procesos de razonamiento similares al humano:
+Se investigaron estrategias para guiar al modelo a través de procesos de razonamiento similares al humano:
 
 - **Chain of Thought (CoT):** estructurar el razonamiento paso a paso para tareas complejas.
 - **Tree of Thought (ToT):** navegación de soluciones parciales en forma de árbol.
@@ -62,7 +62,7 @@ Más detalles sobre estas técnicas:
 - [Guía sobre Chain of Thought](https://deepgram.com/learn/chain-of-thought-prompting-guide)
 
 
-### Decisiones Estratégicas: Selección del Modelo
+## Decisiones Estratégicas: Selección del Modelo
 Tras un análisis exhaustivo de los pros y contras de varios modelos, se decidió trabajar con modelos de la familia **LLaMA**, destacando las siguientes decisiones:
 - No utilizar modelos con tareas predefinidas, como **LLaMA3.1 8B Instruct-Summarization**, que inicialmente parecía una opción viable pero ofrecía menor flexibilidad.
 - Priorizar modelos **Instruct-based**, los cuales permitieron una mayor adaptabilidad y personalización en la generación de texto.
