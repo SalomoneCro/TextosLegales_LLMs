@@ -32,8 +32,11 @@ En la segunda fase, se accedió a servidores avanzados en San Francisco, Córdob
 Durante el proceso se investigaron y probaron diferentes enfoques para resumir documentos extensos usando LLMs:
 
 - **Staffing Method:** ingreso directo del texto completo como prompt (limitado por el tamaño del input).
+![Staffing Method](Staffing.jpg)
 - **MapReduce Method:** división del texto en fragmentos, resumen por partes y fusión de los resúmenes.
+![MapReduce Method](MapReduce.jpg)
 - **Refine Method:** resumen incremental combinando subtextos en serie.
+![Refine Method](Refine.jpg)
 
 > Si bien el sistema final no utilizó MapReduce ni Refine, su experimentación fue crucial para comprender las limitaciones contextuales y computacionales de cada enfoque.
 
@@ -57,7 +60,7 @@ Se investigaron estrategias para guiar al modelo a través de procesos de razona
 - **Tree of Thought (ToT):** navegación de soluciones parciales en forma de árbol.
 - **Graph of Thought (GoT):** extensión flexible del ToT, explorando soluciones a través de grafos arbitrarios.
 
-![Descripción alternativa de la imagen](PoT.jpg)
+![PoT](PoT.jpg)
 
 Más detalles sobre estas técnicas:
 - [CoT, ToT y GoT explicadas](https://wandb.ai/sauravmaheshkar/prompting-techniques/reports/Chain-of-thought-tree-of-thought-and-graph-of-thought-Prompting-techniques-explained---Vmlldzo4MzQwNjMx)
