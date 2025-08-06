@@ -57,7 +57,7 @@ Se investigaron estrategias para guiar al modelo a través de procesos de razona
 - **Tree of Thought (ToT):** navegación de soluciones parciales en forma de árbol.
 - **Graph of Thought (GoT):** extensión flexible del ToT, explorando soluciones a través de grafos arbitrarios.
 
-![Descripción alternativa de la imagen](PoT.png)
+![Descripción alternativa de la imagen](PoT.jpg)
 
 Más detalles sobre estas técnicas:
 - [CoT, ToT y GoT explicadas](https://wandb.ai/sauravmaheshkar/prompting-techniques/reports/Chain-of-thought-tree-of-thought-and-graph-of-thought-Prompting-techniques-explained---Vmlldzo4MzQwNjMx)
