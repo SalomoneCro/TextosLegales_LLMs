@@ -54,7 +54,7 @@ Durante el proceso, se definieron criterios empíricos para evaluar la **mala ca
 
 ### Acceso a Recursos de Alto Desempeño
 En la segunda fase, se accedió a servidores avanzados en San Francisco, Córdoba, equipados con dos **NVIDIA A30** de 25 GB de GPU cada una. Este entorno permitió:
-- Cargar un modelo **LLaMA de 8B parámetros**.
+- Cargar modelos mas grandes, como **LLaMA de 8B y 11B parámetros**.
 - Obtener resultados prometedores y eficientes en la extracción de metadatos y la generación de síntesis.
 
 ### Técnicas Avanzadas de Prompting
