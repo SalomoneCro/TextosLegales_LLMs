@@ -22,11 +22,6 @@ En una primera instancia, se utilizó la plataforma **Google Colab** para compre
 - Experimentar con bibliotecas especializadas como **Transformers**, **Accelerate** y **Torch**.
 Aprovechando los 15 GB de GPU de la versión gratuita de Colab, fue posible realizar pruebas básicas y obtener los primeros resultados.
 
-### Acceso a Recursos de Alto Desempeño
-En la segunda fase, se accedió a servidores avanzados en San Francisco, Córdoba, equipados con dos **NVIDIA A30** de 25 GB de GPU cada una. Este entorno permitió:
-- Cargar un modelo **LLaMA de 8B parámetros**.
-- Obtener resultados prometedores y eficientes en la extracción de metadatos y la generación de síntesis.
-
 ### Técnicas de Resumen Exploradas
 
 Durante el proceso se investigaron y probaron diferentes enfoques para resumir documentos extensos usando LLMs:
@@ -50,7 +45,17 @@ Durante el proceso, se definieron criterios empíricos para evaluar la **mala ca
 - Uso de **formatos ajenos** al estilo jurídico (ej: un resumen terminó con la leyenda “Madrid, 18 de septiembre de 2024”, cuando toda la información usada fue de Córdoba, Argentina).
 - **Repetición innecesaria** de oraciones, palabras o símbolos (ej: “,,,”, frases duplicadas).
   
+## Librerías y Codebases
+- **[Transformers](https://huggingface.co/docs/transformers/)**: Biblioteca para trabajar con modelos de lenguaje preentrenados.
+- **[Python](https://www.python.org/)**: Lenguaje de programación principal.
+- **[CUDA](https://developer.nvidia.com/cuda-toolkit)**: Para la aceleración en GPU.
+- **[Torch](https://pytorch.org/)**: Framework para machine learning.
+- **[Modelo Llama-3.2-11B-Vision-Instruct](https://github.com/facebookresearch/llama)**: Modelo preentrenado especializado.
 
+### Acceso a Recursos de Alto Desempeño
+En la segunda fase, se accedió a servidores avanzados en San Francisco, Córdoba, equipados con dos **NVIDIA A30** de 25 GB de GPU cada una. Este entorno permitió:
+- Cargar un modelo **LLaMA de 8B parámetros**.
+- Obtener resultados prometedores y eficientes en la extracción de metadatos y la generación de síntesis.
 
 ### Técnicas Avanzadas de Prompting
 
@@ -69,26 +74,10 @@ Más detalles sobre estas técnicas:
 
 ## Decisiones Estratégicas: Selección del Modelo
 Tras un análisis exhaustivo de los pros y contras de varios modelos, se decidió trabajar con modelos de la familia **LLaMA**, destacando las siguientes decisiones:
-- No utilizar modelos con tareas predefinidas, como **LLaMA3.1 8B Instruct-Summarization**, que inicialmente parecía una opción viable pero ofrecía menor flexibilidad.
+- No utilizar modelos especializados en resumir, como **LLaMA3.1 8B Instruct-Summarization**, que inicialmente parecía una opción viable pero ofrecía menor flexibilidad.
 - Priorizar modelos **Instruct-based**, los cuales permitieron una mayor adaptabilidad y personalización en la generación de texto.
 
 Este enfoque iterativo y basado en decisiones estratégicas fue clave para lograr un balance entre desempeño, flexibilidad y recursos computacionales disponibles.
-
-
-## Librerías y Codebases
-- **[Transformers](https://huggingface.co/docs/transformers/)**: Biblioteca para trabajar con modelos de lenguaje preentrenados.
-- **[Python](https://www.python.org/)**: Lenguaje de programación principal.
-- **[CUDA](https://developer.nvidia.com/cuda-toolkit)**: Para la aceleración en GPU.
-- **[Torch](https://pytorch.org/)**: Framework para machine learning.
-- **[Modelo Llama-3.2-11B-Vision-Instruct](https://github.com/facebookresearch/llama)**: Modelo preentrenado especializado.
-
-## Feedback e Integración de Sugerencias
-
-- **Comentarios Recibidos:**  
-  Uno de los puntos más destacados en el feedback de nuestros compañeros de materia fue la preocupación sobre cómo determinar la calidad de los resúmenes generados. Las preguntas principales giraban en torno a las métricas utilizadas, los métodos de evaluación y los criterios para definir si un resumen es efectivo.
-
-- **Implementación de Sugerencias:**  
-  Para abordar estas inquietudes, nos contactamos con la Dra. Valeria Sola, del Poder Judicial de Córdoba, con el objetivo de someter los resúmenes generados por nuestro modelo a una evaluación experta. Los resúmenes seran revisados por abogados especializados, quienes evaluaran su calidad en diferentes aspectos, como precisión, claridad y utilidad en el contexto judicial.
 
 
 ## Metodología
@@ -99,6 +88,13 @@ Este enfoque iterativo y basado en decisiones estratégicas fue clave para logra
 - **Entrenamiento/Inferencia:**  
   Para obtener resultados de alta calidad, se implementaron técnicas avanzadas como **Chain of Thought (CoT)** y **Few-Shot Encoding**. Cada sección del resumen fue abordada con prompts específicos, diseñados cuidadosamente para incluir ejemplos relevantes y específicos al contexto de esa parte del texto. Esto permitió al modelo comprender mejor la tarea y generar resúmenes más precisos y adaptados al ámbito jurídico.
 
+## Feedback e Integración de Sugerencias
+
+- **Comentarios Recibidos:**  
+  Uno de los puntos más destacados en el feedback de nuestros compañeros de materia fue la preocupación sobre cómo determinar la calidad de los resúmenes generados. Las preguntas principales giraban en torno a las métricas utilizadas, los métodos de evaluación y los criterios para definir si un resumen es efectivo.
+
+- **Implementación de Sugerencias:**  
+  Para abordar estas inquietudes, nos contactamos con la Dra. Valeria Sola, del Poder Judicial de Córdoba, con el objetivo de someter los resúmenes generados por nuestro modelo a una evaluación experta. Los resúmenes seran revisados por abogados especializados, quienes evaluaran su calidad en diferentes aspectos, como precisión, claridad y utilidad en el contexto judicial.
 
 ## Resultados
 
