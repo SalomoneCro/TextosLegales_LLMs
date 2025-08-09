@@ -35,7 +35,7 @@ Durante el proceso se investigaron y probaron diferentes enfoques para resumir d
 
 > Si bien el sistema final no utilizó MapReduce ni Refine, su experimentación fue crucial para comprender las limitaciones contextuales y computacionales de cada enfoque.
 
-Más información sobre estas técnicas en este [artículo de Medium](https://medium.com/google-cloud/langchain-chain-types-large-document-summarization-using-langchain-and-google-cloud-vertex-ai-1650801899f6).
+Más información sobre estas técnicas en este artículo de Medium [[Challenges of LLM for Large Document Summarization : Exploring different LangChain approaches using Google Cloud Vertex AI PaLM2 API, Anirban Chakraborty]](https://medium.com/google-cloud/langchain-chain-types-large-document-summarization-using-langchain-and-google-cloud-vertex-ai-1650801899f6).
 
 ### Indicadores de Calidad en los Resultados
 
@@ -68,8 +68,8 @@ Se investigaron estrategias para guiar al modelo a través de procesos de razona
 ![PoT](PoT.jpg)
 
 Más detalles sobre estas técnicas:
-- [CoT, ToT y GoT explicadas](https://wandb.ai/sauravmaheshkar/prompting-techniques/reports/Chain-of-thought-tree-of-thought-and-graph-of-thought-Prompting-techniques-explained---Vmlldzo4MzQwNjMx)
-- [Guía sobre Chain of Thought](https://deepgram.com/learn/chain-of-thought-prompting-guide)
+- [Chain-of-thought, tree-of-thought, and graph-of-thought: Prompting techniques explained, Saurav Maheshkar](https://wandb.ai/sauravmaheshkar/prompting-techniques/reports/Chain-of-thought-tree-of-thought-and-graph-of-thought-Prompting-techniques-explained---Vmlldzo4MzQwNjMx)
+- [Chain-of-Thought Prompting: Helping LLMs Learn by Example, Brad Nikkel](https://deepgram.com/learn/chain-of-thought-prompting-guide)
 
 
 ## Decisiones Estratégicas: Selección del Modelo
@@ -171,8 +171,8 @@ A continuación, se enumeran las principales fuentes y referencias bibliográfic
 
 1. [Documentación de Transformers - Hugging Face](https://huggingface.co/docs/transformers/en/index): Recurso oficial para comprender el uso y funcionalidades de la biblioteca Transformers.
 2. [Modelos LLaMA - Meta](https://huggingface.co/collections/meta-llama/llama-32-66f448ffc8c32f949b04c8cf): Colección oficial de modelos LLaMA en Hugging Face.
-3. [Quantization en LLM - Tech Research Space](https://medium.com/@techresearchspace/what-is-quantization-in-llm-01ba61968a51): Explicación detallada sobre la cuantización y su impacto en modelos de lenguaje.
-4. [Chain of Thought Prompting - Deepgram](https://deepgram.com/learn/chain-of-thought-prompting-guide): Guía sobre la técnica de Chain of Thought Prompting para mejorar la precisión de LLMs.
+3. [What is Quantization in LLM, Nithin Devanand](https://medium.com/@techresearchspace/what-is-quantization-in-llm-01ba61968a51): Explicación detallada sobre la cuantización y su impacto en modelos de lenguaje.
+4. [Chain-of-Thought Prompting: Helping LLMs Learn by Example, Brad Nikkel](https://deepgram.com/learn/chain-of-thought-prompting-guide): Guía sobre la técnica de Chain of Thought Prompting para mejorar la precisión de LLMs.
 5. [Few-shot Prompting - Learn Prompting](https://learnprompting.org/docs/basics/few_shot?srsltid=AfmBOopY1hz1ELtbvzCDem35nexC4X8LwZImQlWRuWQ2f1k8YcqNk3u_): Introducción al uso de Few-shot Prompting para personalizar respuestas de modelos de lenguaje.
 
 
